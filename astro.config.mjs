@@ -4,5 +4,12 @@ import compress from 'astro-compress';
 import { astroImageTools } from 'astro-imagetools';
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), compress(), astroImageTools],
+  integrations: [tailwind(), compress(), astroImageTools,],
+  markdown: {
+    syntaxHighlight: "shiki",
+    shikiConfig: {
+      theme: "rose-pine",
+      wrap: false,
+    },
+  },
 });

@@ -1,11 +1,11 @@
 ---
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import formatDate from "../../utils/formatDate";
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import formatDate from '../../utils/formatDate';
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
+  const posts = await getCollection('posts');
 
   return posts.map((post) => ({
     params: { slug: post.slug },
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 type Props = {
-  post: CollectionEntry<"posts">;
+  post: CollectionEntry<'posts'>;
 };
 
 const { post } = Astro.props;
@@ -23,8 +23,8 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title} description={post.data.description}>
   <main class="post mx-auto flex w-full max-w-4xl flex-col gap-4" id="main">
-    <header role="presentation" class="py-20 pb-0 flex flex-col gap-4">
-      <a href="/" class="p-4 rounded-lg bg-red-400 dark:bg-red-600 w-fit ">← Back</a>
+    <header role="presentation" class="flex flex-col gap-4 py-20 pb-0">
+      <a href="/" class="w-fit rounded-lg bg-red-400 p-4 dark:bg-red-600">← Back</a>
       <h1 class="text-3xl">
         {post.data.title} - {formatDate(post.data.publishedAt)}
       </h1>
@@ -33,77 +33,74 @@ const { Content } = await post.render();
   </main>
 </Layout>
 <style>
-#main{
-  & header a {
+  #main header a {
     text-decoration: none !important;
   }
-  & header h1 {
+  #main header h1 {
     @apply mt-0 w-screen max-w-full text-3xl font-bold;
   }
-  & header h1:after {
+  #main header h1:after {
     @apply mb-0 mt-4 block h-1 w-80 rounded-full bg-gradient-to-r from-red-800 dark:from-red-400;
-    content: "";
+    content: '';
   }
-  & h1 {
+  #main h1 {
     @apply mb-1 mt-6 text-4xl font-bold;
   }
-  & h2 {
+  #main h2 {
     @apply mb-1 mt-6 text-3xl font-bold;
   }
-  & h3 {
+  #main h3 {
     @apply mb-1 mt-6 text-2xl font-bold;
   }
-  & h4 {
+  #main h4 {
     @apply mb-1 mt-6 text-xl font-bold;
   }
-  & h5 {
+  #main h5 {
     @apply mb-1 mt-6 text-lg font-bold;
   }
-  & h6 {
+  #main h6 {
     @apply mb-1 mt-6 text-lg font-bold;
   }
-  & p {
+  #main p {
     @apply my-2;
   }
-  & li {
+  #main li {
     @apply my-2 ml-4;
   }
-  & bold,
-  & strong,
-  & i,
-  & em {
+  #main bold,
+  #main strong,
+  #main i,
+  #main em {
     @apply text-red-950 dark:text-red-50;
   }
-  & ol li {
+  #main ol li {
     @apply list-decimal;
   }
-  & ul li {
+  #main ul li {
     @apply list-disc;
   }
-  & pre {
-    @apply my-4 max-w-full overflow-auto rounded-md p-4 ;
+  #main pre {
+    @apply my-4 max-w-full overflow-auto rounded-md p-4;
   }
   p code,
-  & li code {
+  #main li code {
     @apply rounded-sm  px-1 text-[15px];
   }
-  & pre code {
+  #main pre code {
     @apply bg-transparent p-0;
   }
-  & hr {
+  #main hr {
     @apply my-8 border-gray-300 dark:border-gray-700;
   }
-  & a {
-    @apply underline text-red-900 dark:text-red-100;
+  #main a {
+    @apply text-red-900 underline dark:text-red-100;
   }
-  
-  & blockquote {
+
+  #main blockquote {
     @apply my-4 border-l-4  py-2 pl-5 pr-2;
   }
-}
 
-.astro-code{
-  @apply text-sm;
-}
-
+  .astro-code {
+    @apply text-sm;
+  }
 </style>
