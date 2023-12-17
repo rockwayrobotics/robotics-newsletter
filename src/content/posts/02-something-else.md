@@ -1,7 +1,7 @@
 ---
 title: "Something else"
-publishedAt: 2023-05-24
-description: "Some basic rules I follow when doing ui"
+publishedAt: 2023-08-24
+description: "The index page is sorted by date"
 slug: "something-else"
 isPublish: true
 ---
