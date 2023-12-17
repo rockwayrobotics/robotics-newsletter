@@ -12,15 +12,26 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
   description="The website for FRC Team 8089, Rockway Robotics."
   title="8089 · Rockway Robotics"
 >
-  <h1>
-    Newsletter
-  </h1>
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-16 mb-10 relative">
+      <div
+  class="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:24px_22px]"
+></div>
+      <div class="flex flex-col items-start gap-8 sm:gap-10">
+        <div class="flex max-w-xl flex-col items-start gap-4 sm:gap-6">
+          <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
+            The Newsletter.
+          </h1>
+        </div>
+      </div>
+    </div>
   <main class="flex gap-10 pt-10 justify-center">
-    <article class="flex flex-col gap-4 bg-red-400 max-w-5xl w-full">
+    <article class="flex flex-col gap-4 p-5   max-w-5xl w-full">
       {
         posts.map((post) => (
           <a
-            class="group"
+            class="group ring-red-200 dark:ring-red-800 ring-2 rounded-lg p-5"
             href={`/posts/${post.slug}`}
           >
             <div class="flex w-full items-center justify-between">

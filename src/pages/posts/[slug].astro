@@ -23,8 +23,9 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title} description={post.data.description}>
   <main class="post mx-auto flex w-full max-w-4xl flex-col gap-4" id="main">
+    <a href="/" class="mt-20 p-4 rounded-lg bg-red-300 dark:bg-red-900 w-fit">← Back</a>
     <header role="presentation">
-      <h1 class="text-3xl pt-10 pb-5">
+      <h1 class="text-3xl pb-5">
         {post.data.title} - {formatDate(post.data.publishedAt)}
       </h1>
       <p class="italic">{post.data.description}</p>
