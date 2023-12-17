@@ -22,9 +22,9 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
-  <main class="post mx-auto flex w-full max-w-4xl flex-col gap-4" id="main">
+  <main class="post mx-auto flex w-full max-w-4xl flex-col gap-4 p-5" id="main">
     <header role="presentation" class="flex flex-col gap-4 py-20 pb-0">
-      <a href="/" class="w-fit rounded-lg bg-red-400 p-4 dark:bg-red-600">← Back</a>
+      <a href="/" class="w-fit rounded-lg bg-red-400 p-4 dark:bg-red-600 mb-10">← Back</a>
       <h1 class="text-3xl">
         {post.data.title} - {formatDate(post.data.publishedAt)}
       </h1>
@@ -32,9 +32,10 @@ const { Content } = await post.render();
     <Content />
   </main>
 </Layout>
-<style>
+<style is:global>
   #main header a {
     text-decoration: none !important;
+    @apply text-black dark:text-white;
   }
   #main header h1 {
     @apply mt-0 w-screen max-w-full text-3xl font-bold;
@@ -62,7 +63,7 @@ const { Content } = await post.render();
     @apply mb-1 mt-6 text-lg font-bold;
   }
   #main p {
-    @apply my-2;
+    @apply my-2 text-neutral-800 dark:text-neutral-300 leading-7;
   }
   #main li {
     @apply my-2 ml-4;
