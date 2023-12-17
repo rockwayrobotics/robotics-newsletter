@@ -1,5 +1,5 @@
 ---
-title: "How I do UI"
+title: "Something"
 publishedAt: 2023-05-24
 description: "Some basic rules I follow when doing ui"
 slug: "how-i-do-ui"

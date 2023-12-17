@@ -1,5 +1,5 @@
 ---
-title: "How I do UI"
+title: "Something else"
 publishedAt: 2023-05-24
 description: "Some basic rules I follow when doing ui"
 slug: "something-else"
@@ -35,3 +35,8 @@ import { landing_image_url } from "../../content/landing.ts"
   </div>
 </section>
 ```
+
+**Bold**
+
+*italic*
+

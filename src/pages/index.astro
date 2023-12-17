@@ -31,7 +31,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
       {
         posts.map((post) => (
           <a
-            class="group ring-red-200 dark:ring-red-800 ring-2 rounded-lg p-5"
+            class="group ring-red-200 dark:ring-red-500/40 ring-2 rounded-lg p-5"
             href={`/posts/${post.slug}`}
           >
             <div class="flex w-full items-center justify-between">

@@ -23,13 +23,87 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title} description={post.data.description}>
   <main class="post mx-auto flex w-full max-w-4xl flex-col gap-4" id="main">
-    <a href="/" class="mt-20 p-4 rounded-lg bg-red-300 dark:bg-red-900 w-fit">← Back</a>
-    <header role="presentation">
-      <h1 class="text-3xl pb-5">
+    <header role="presentation" class="py-20 pb-0 flex flex-col gap-4">
+      <a href="/" class="p-4 rounded-lg bg-red-400 dark:bg-red-600 w-fit ">← Back</a>
+      <h1 class="text-3xl">
         {post.data.title} - {formatDate(post.data.publishedAt)}
       </h1>
-      <p class="italic">{post.data.description}</p>
     </header>
     <Content />
   </main>
 </Layout>
+<style>
+#main{
+  & header a {
+    text-decoration: none !important;
+  }
+  & header h1 {
+    @apply mt-0 w-screen max-w-full text-3xl font-bold;
+  }
+  & header h1:after {
+    @apply mb-0 mt-4 block h-1 w-80 rounded-full bg-gradient-to-r from-red-800 dark:from-red-400;
+    content: "";
+  }
+  & h1 {
+    @apply mb-1 mt-6 text-4xl font-bold;
+  }
+  & h2 {
+    @apply mb-1 mt-6 text-3xl font-bold;
+  }
+  & h3 {
+    @apply mb-1 mt-6 text-2xl font-bold;
+  }
+  & h4 {
+    @apply mb-1 mt-6 text-xl font-bold;
+  }
+  & h5 {
+    @apply mb-1 mt-6 text-lg font-bold;
+  }
+  & h6 {
+    @apply mb-1 mt-6 text-lg font-bold;
+  }
+  & p {
+    @apply my-2;
+  }
+  & li {
+    @apply my-2 ml-4;
+  }
+  & bold,
+  & strong,
+  & i,
+  & em {
+    @apply text-red-950 dark:text-red-50;
+  }
+  & ol li {
+    @apply list-decimal;
+  }
+  & ul li {
+    @apply list-disc;
+  }
+  & pre {
+    @apply my-4 max-w-full overflow-auto rounded-md p-4 ;
+  }
+  p code,
+  & li code {
+    @apply rounded-sm  px-1 text-[15px];
+  }
+  & pre code {
+    @apply bg-transparent p-0;
+  }
+  & hr {
+    @apply my-8 border-gray-300 dark:border-gray-700;
+  }
+  & a {
+    @apply underline text-red-900 dark:text-red-100;
+  }
+  
+  & blockquote {
+    @apply my-4 border-l-4  py-2 pl-5 pr-2;
+  }
+}
+
+.astro-code{
+  @apply text-sm;
+}
+
+</style>
